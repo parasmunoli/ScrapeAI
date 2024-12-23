@@ -5,7 +5,7 @@ from scrape import (
     cleanText,
     splitText
 )
-
+st.set_page_config(page_title="ScrapeAI")
 st.title("AI Web Scraper")
 url = st.text_input("Enter Website URL:")
 
