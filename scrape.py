@@ -39,3 +39,8 @@ def cleanText(text):
     cleanedText = "\n".join(line.strip() for line in cleanedText.splitlines() if line.strip())
     return cleanedText
 
+def splitText(text, maxLength = 5000):
+    print("Splitting data...")
+    return [
+        text [i : i + maxLength] for i in range(0, len(text), maxLength)
+    ]
