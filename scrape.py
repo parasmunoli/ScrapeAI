@@ -28,3 +28,14 @@ def extractBody(html):
     return None
 
 
+def cleanText(text):
+    print("Cleaning data...")
+    soup = BeautifulSoup(text, "html.parser")
+
+    for script in soup(["script", "style"]):
+        script.extract()
+
+    cleanedText = soup.get_text(separator="\n")
+    cleanedText = "\n".join(line.strip() for line in cleanedText.splitlines() if line.strip())
+    return cleanedText
+
